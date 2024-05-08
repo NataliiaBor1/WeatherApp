@@ -8,7 +8,7 @@ fetch(`${apiURL}latitude=${latitude}&longitude=${longitude}&hourly=${temperature
     headers: {
         'Content-Type': application/json
     }
-}) 
+} 
     .then(response => {
         if (response.ok) {
             console.log('Here is your forecast for the week')
