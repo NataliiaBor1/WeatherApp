@@ -2,6 +2,7 @@ const apiURL = "https://open-meteo.com/v1/forecast?";
 const latitude = 37.6819;
 const longitude = -121.768;
 const temperature = "temperature_2m";
+const precipitation = "precipitation,rain,showers,snowfall";
 
 fetch(`${apiURL}latitude=${latitude}&longitude=${longitude}&hourly=${temperature}`, {
     method: 'GET',
@@ -18,6 +19,12 @@ fetch(`${apiURL}latitude=${latitude}&longitude=${longitude}&hourly=${temperature
         }
         response.json()
     })
-    .then(data => console.log(data))
+    .then(data => {
+        data.forEach(temp => {
+            const innerText = `<li>${temp.name}</li>`;
+
+            document.querySelector('ul').insertAdjacentHTML('beforeend', innerText)
+        });
+    })
     .catch(error => console.log('error'))
 );
