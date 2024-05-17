@@ -9,23 +9,29 @@
 </head>
 <body>
     <header>
-        <h1>Weather Forecast</h1>
+        <h1>Weather Forecast 🌤️</h1>
     </header>
 
-    <nav>
+    <nav class="navigationMenu">
         <ul>
-            <li><a href="#temperature">Temperature</a></li>
-            <li><a href="#precipitation">Precipitation</a></li>
-            <li><a href="#wind speed">Wind Speed</a></li>
+            <li class="listItem"><a href="#temperature">Temperature</a></li>
+            <li class="listItem"><a href="#precipitation">Precipitation</a></li>
+            <li class="listItem"><a href="#wind speed">Wind Speed</a></li>
         </ul>
     </nav>
 
-    <form class="form">
-        <input type="text" class="location" placeholder="Enter your location">
-        <button type="submit">Get forecast</button>
+    <form class="forecastForm">
+        <input type="text" class="locationInput" placeholder="Enter your location">
+        <button type="submit">Get forecast</button> 
     </form>
 
-    <div class="card" style="display: none"></div>
+    <div class="card" style="display: none">
+        <h1 class="cityLocation">Livermore, CA</h1>
+        <p class="temperatureInfo">90 degrees</p>
+        <p class="precipitationInfo">0%</p>
+        <p class="forecastPicture">🌤️</p>
+        <p class="errorInfo">Enter your location</p>
+    </div>
     
     <script src="weatherapp.js"></script>
 </body>
